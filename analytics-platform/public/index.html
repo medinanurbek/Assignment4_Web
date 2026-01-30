@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytical Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Analytical Platform</h1>
+
+    <div class="filter-bar">
+        <div class="input-group">
+            <label>Analyze Field</label>
+            <select id="fieldSelect">
+                <option value="field1">Field 1 (Temperature)</option>
+                <option value="field2">Field 2 (Humidity)</option>
+                <option value="field3">Field 3 (CO2 Levels)</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>Chart Type</label>
+            <select id="chartType">
+                <option value="line">Line Chart</option>
+                <option value="bar">Bar Chart</option>
+                <option value="pie">Pie Chart (Distribution)</option>
+                <option value="polarArea">Polar Area</option>
+                <option value="radar">Radar Chart</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label>Start Date</label>
+            <input type="date" id="startDate">
+        </div>
+        <div class="input-group">
+            <label>End Date</label>
+            <input type="date" id="endDate">
+        </div>
+        <button id="analyzeBtn">Analyze</button>
+    </div>
+
+    <div class="metrics-grid">
+        <div class="metric-card"><h3>Average</h3><p id="avg-val">0.00</p></div>
+        <div class="metric-card"><h3>Minimum</h3><p id="min-val">0.00</p></div>
+        <div class="metric-card"><h3>Maximum</h3><p id="max-val">0.00</p></div>
+        <div class="metric-card"><h3>Std Deviation</h3><p id="std-val">0.00</p></div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="timeSeriesChart"></canvas>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
